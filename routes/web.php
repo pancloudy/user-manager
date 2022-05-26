@@ -19,3 +19,4 @@ Route::get('/', function () {
 Route::get('/main','App\Http\Controllers\UserController@main')->name('user.main');
 Route::get( 'main/listusers', 'App\Http\Controllers\UserController@index')->name('user.listusers');
 Route::get( 'main/details', 'App\Http\Controllers\UserController@getUserById')->name('user.getUserById');
+Route::get( 'main/new', 'App\Http\Controllers\UserController@new')->name('user.new');
