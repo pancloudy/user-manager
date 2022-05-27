@@ -1,4 +1,4 @@
-<button type="button" onclick="history.back();">Back</button>
+<a href="{{ route("user.main") }}">Back</a>
 <br>
 <?php
 

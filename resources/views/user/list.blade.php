@@ -16,10 +16,19 @@
     }
 </style>
 
+<form method="get"  action="/search">
+    <div class="form-group">
+        <input type="search" name="search" class="form-control">
+        <span class="form-group-btn">
+            <button type="submit">Search</button>
+        </span>
+    </div>
+
+</form>
 
 
-<button type="button" onclick="history.back();">Back</button>
-<table>
+<a href="{{ route("user.main") }}">Back</a>
+<table class="table">
 
 
     <tr>

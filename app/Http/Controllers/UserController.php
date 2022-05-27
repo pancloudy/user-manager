@@ -40,7 +40,13 @@ class UserController extends Controller
         $user->age = $request->get('age');
         $user->gender = $request->get('gender');
         $user->save();
-        $users = ['list' =>User::all('name', 'age','gender')];
-        return view('user.new',$users);
+        $usera = ['list' =>User::all('name','age','gender')];
+        return view('user.new',$usera);
+    }
+    public function searchByName(Request $request)
+    {
+        $search=$request->get('search');
+        $user = DB::table('user')->where('name', 'like', '%'.$search.'%');
+        return view("user.list",['user' => $user]);
     }
 }

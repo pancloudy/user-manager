@@ -1,10 +1,11 @@
-<form>
+<a href="{{ route("user.main") }}">Back</a>
+<form action="{{ route("user.save") }}">
 
     Name: <input type="text" name="name" value="">
 
     <br>
 
-    Age:  <input type="number" name="number" value="">
+    Age:  <input type="number" name="age" value="">
 
     <br>
 
