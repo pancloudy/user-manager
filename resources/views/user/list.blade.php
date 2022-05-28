@@ -16,7 +16,7 @@
     }
 </style>
 
-<form method="get"  action="/search">
+<form method="get"  action="{{ route("user.searchByName") }}">
     <div class="form-group">
         <input type="search" name="search" class="form-control">
         <span class="form-group-btn">
@@ -43,16 +43,16 @@
     @foreach ($user as $users)
         <tr>
             <td>
-                {{ $users->id }}
+                {{ $users->id ?? false }}
             </td>
             <td>
-                {{ $users->name }}
+                {{ $users->name ?? false}}
             </td>
             <td>
-                {{ $users->age }}
+                {{ $users->age ?? false}}
             </td>
             <td>
-                {{ $users->gender }}
+                {{ $users->gender ?? false}}
             </td>
         </tr>
     @endforeach

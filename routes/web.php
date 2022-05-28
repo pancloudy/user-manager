@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +22,5 @@ Route::get( 'main/listusers', 'App\Http\Controllers\UserController@index')->name
 Route::get( 'main/details', 'App\Http\Controllers\UserController@getUserById')->name('user.getUserById');
 Route::get( 'main/new', 'App\Http\Controllers\UserController@new')->name('user.new');
 Route::get("main/new/save/","App\Http\Controllers\UserController@save")->name("user.save");
-Route::get('main/search', 'App\Http\Controllers\UserController@searchbyname')->name('user.namesearch');
+Route::get('main/search', 'App\Http\Controllers\UserController@searchByName')->name('user.searchByName');
+
