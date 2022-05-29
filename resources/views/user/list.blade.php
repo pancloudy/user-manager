@@ -36,7 +36,7 @@
         <th>Name</th>
         <th>Age</th>
         <th>Gender</th>
-
+        <th>Actions</th>
     </tr>
 
 
@@ -53,6 +53,18 @@
             </td>
             <td>
                 {{ $users->gender ?? false}}
+            </td>
+            <td>
+                <form action="{{ action('App\Http\Controllers\UserController@delete', $users->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+                <form action="{{ action('App\Http\Controllers\UserController@edit', $users->id) }}">
+                    @csrf
+
+                    <button type="submit">Edit</button>
+                </form>
             </td>
         </tr>
     @endforeach

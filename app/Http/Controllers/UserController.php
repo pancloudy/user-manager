@@ -53,4 +53,26 @@ class UserController extends Controller
             return array('Result', 'No records found');
         }
     }
+    public function delete($id){
+
+        $user = DB::delete('delete from user where id=?', [$id]);
+        $redirect = redirect('main/listusers');
+        return $redirect;
+    }
+    public function edit($id){
+        $user = DB::select('select * from user where id=?',[$id]);
+        return view('user.edit', ['user'=>$user]);
+    }
+    public function update(Request $request, $id){
+        $name=$request->get('name');
+        $age=$request->get('age');
+        $gender=$request->get('gender');
+        $user = DB::update('update user set name=?, age=?, gender=? where id=?',[$name, $age, $gender, $id]);
+        if($user){
+            $redirect = redirect('main/listusers')->with('success');
+        }else{
+            $redirect = redirect('user.edit')->with('error');
+        }
+        return $redirect;
+    }
 }
